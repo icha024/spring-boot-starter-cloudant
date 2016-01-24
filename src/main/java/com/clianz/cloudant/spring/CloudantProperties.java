@@ -12,6 +12,12 @@ import java.net.URL;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
+
+/**
+ * Configuration properties for Cloudant.
+ *
+ * @author Ian Chan
+ */
 @Configuration
 @ConfigurationProperties(prefix = "spring.data.cloudant")
 public class CloudantProperties {

@@ -4,6 +4,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.TimeZone;
 
+/**
+ * Common date format, useful for DB objects.
+ */
 public class CommonsDateFormatter {
 
 	public static final String APACHE_COMMONS_DT_FORMAT = "yyyy/MM/dd HH:mm:ss:SSS zzz";

@@ -2,6 +2,11 @@ package com.clianz.cloudant.basedocument;
 
 import com.google.gson.annotations.SerializedName;
 
+/**
+ * Base class for Cloudant object to generate id and rev field.
+ *
+ * @author Ian Chan
+ */
 public abstract class CloudantDoc {
 
 	@SerializedName("_id")

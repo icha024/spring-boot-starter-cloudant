@@ -2,6 +2,11 @@ package com.clianz.cloudant.spring.internal;
 
 import com.clianz.bluemix.configurator.BluemixConfigStore;
 
+/**
+ * Util for getting Cloudant configs on Bluemix (CloudFoundry).
+ *
+ * @author Ian Chan
+ */
 public class CredentialUtils {
 
 	public static final String getCloudantUsername() {
