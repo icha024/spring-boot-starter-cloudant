@@ -20,12 +20,7 @@
 			<groupId>com.cloudant</groupId>
 			<artifactId>cloudant-client</artifactId>
 			<version>2.2.0</version>
-		</dependency>
-		<dependency>
-			<groupId>com.clianz</groupId>
-			<artifactId>cloudant-rxjava</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<optional>true</optional>
+			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>

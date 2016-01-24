@@ -1,6 +1,6 @@
 package com.clianz.cloudant.spring;
 
-import com.clianz.cloudant.rx.CloudantClientRx;
+import com.clianz.cloudant.spring.internal.CredentialUtils;
 import com.cloudant.client.api.ClientBuilder;
 import com.cloudant.client.api.CloudantClient;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -19,7 +19,6 @@ public class CloudantProperties {
 	public static final Logger log = Logger.getLogger(CloudantProperties.class.getName());
 
 	private CloudantClient cloudantClient;
-	private CloudantClientRx cloudantClientRx;
 
 	private String account;
 	private String username;
@@ -37,8 +36,9 @@ public class CloudantProperties {
 	public void init() throws MalformedURLException {
 
 		try {
-			cloudantClientRx = new CloudantClientRx();
-			cloudantClient = cloudantClientRx.getNonRxClient();
+			String username = CredentialUtils.getCloudantUsername();
+			String password = CredentialUtils.getCloudantPassword();
+			cloudantClient = ClientBuilder.account(username).username(username).password(password).build();
 			log.info("Using VCAP_SERVICES configuration for Cloudant.");
 			return;
 		} catch (IllegalArgumentException e) {
@@ -85,15 +85,10 @@ public class CloudantProperties {
 			clientBuilder.disableSSLAuthentication();
 		}
 		cloudantClient = clientBuilder.build();
-		cloudantClientRx = new CloudantClientRx(cloudantClient);
 	}
 
 	public CloudantClient getCloudantClient() {
 		return cloudantClient;
-	}
-
-	public CloudantClientRx getCloudantClientRx() {
-		return cloudantClientRx;
 	}
 
 	public String getAccount() {

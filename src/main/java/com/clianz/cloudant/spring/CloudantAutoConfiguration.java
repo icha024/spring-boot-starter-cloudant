@@ -1,9 +1,7 @@
 package com.clianz.cloudant.spring;
 
-import com.clianz.cloudant.rx.CloudantClientRx;
 import com.cloudant.client.api.CloudantClient;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -15,13 +13,6 @@ public class CloudantAutoConfiguration {
 
 	@Autowired
 	private CloudantProperties cloudantProperties;
-
-	@Bean
-	@ConditionalOnClass(name ="com.clianz.cloudant.rx.CloudantClientRx")
-	@ConditionalOnMissingBean
-	public CloudantClientRx cloudantClientRx() {
-		return cloudantProperties.getCloudantClientRx();
-	}
 
 	@Bean
 	@ConditionalOnMissingBean
