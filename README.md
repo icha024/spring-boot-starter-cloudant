@@ -40,16 +40,17 @@ mydb.save(data);
 ### Spring Boot Configuration
 Configurations can be place in the Application.properties (or yml, or json) as usual. The username and password is mandatory.
 ```
-spring.data.cloudant.account=myAccountName   #Default to username will be user if blank.
 spring.data.cloudant.username=myUserName     #Mandatory. The username as assigned by Cloudant.
 spring.data.cloudant.password=myPasswd       #Mandatory. The password as assigned by Cloudant.
+##### Optional configs #####
+spring.data.cloudant.account=myAccountName   #Defaults to username if left blank.
 spring.data.cloudant.url=Cloudant URL        #Defaults to official server.
 spring.data.cloudant.proxyURL=http://...     #URL to proxy server
 spring.data.cloudant.proxyUser=myUserName    #Proxy username
 spring.data.cloudant.proxyPassword=myPasswd  #Proxy password.
 spring.data.cloudant.connectTimeout=300      #Connect timeout in seconds. Default to 300 seconds (5 minutes).
 spring.data.cloudant.readTimeout=300         #Read timeout in seconds. Default to 300 seconds (5 minutes).
-spring.data.cloudant.maxConnections=5        #Default to 6.
+spring.data.cloudant.maxConnections=6        #Default to 6.
 spring.data.cloudant.disableSSLAuthentication=false   #Defaults to false.
 ```
 ### Bluemix (CloudFoundry) Configuration
