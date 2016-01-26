@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  * @author Ian Chan
  */
 @Configuration
-@ConfigurationProperties(prefix = "spring.data.cloudant")
+@ConfigurationProperties(prefix = "cloudant")
 public class CloudantProperties {
 
 	public static final Logger log = Logger.getLogger(CloudantProperties.class.getName());
