@@ -57,3 +57,6 @@ When using Bluemix (CloudFoundry), will client will automatically use the Clouda
 
 Bluemix's VCAP_SERVICES environment variable containing a Cloudant service will always take precedence over any Spring configuration. This is useful - Local development will use the Spring configuration properties, and promoting it to Bluemix will automatically use the environment configured instance. If Spring's configuration is desired, just remove the Cloudant service binding from your Bluemix app.
 
+## Requirements
+- Java 1.6+
+- Official Cloudant client 2.x
